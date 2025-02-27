@@ -3,7 +3,7 @@ name: Preview Android app
 on:
   pull_request:
     branches:
-      - main
+      - preview
     paths:
       - 'preview/v*'
 

@@ -1,45 +1,57 @@
 {
-	"expo": {
-		"owner": "van.tran",
-		"name": "grocery-app",
-		"slug": "grocery-app",
-		"version": "1.0.0",
-		"scheme": "com.turbo.example",
-		"orientation": "portrait",
-		"icon": "./assets/icon.png",
-		"userInterfaceStyle": "light",
-		"splash": {
-			"image": "./assets/splash.png",
-			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
-		},
-		"updates": {
-			"fallbackToCacheTimeout": 0
-		},
-		"assetBundlePatterns": ["**/*"],
-		"ios": {
-			"supportsTablet": true
-		},
-		"android": {
-			"adaptiveIcon": {
-				"foregroundImage": "./assets/adaptive-icon.png",
-				"backgroundColor": "#FFFFFF"
-			},
-			"package": "com.turbo.example"
-		},
-		"web": {
-			"favicon": "./assets/favicon.png",
-			"bundler": "metro"
-		},
-		"plugins": ["expo-router"],
-		"newArchEnabled": true,
-		"extra": {
-			"router": {
-				"origin": false
-			},
-			"eas": {
-				"projectId": "c4f8ebdb-01f9-49be-ace5-d477daff4e29"
-			}
-		}
-	}
+  "expo": {
+    "owner": "van.tran",
+    "name": "grocery-app",
+    "slug": "grocery-app",
+    "version": "1.0.0",
+    "scheme": "com.turbo.example",
+    "orientation": "portrait",
+
+    "icon": "./assets/icons/icon-light.png",
+    "userInterfaceStyle": "light",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.turbo.example",
+      "icon": {
+        "light": "./assets/icons/icon-light.png",
+        "dark": "./assets/icons/icon-dark.png",
+        "tinted": "./assets/icons/icon-tinted.png"
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icons/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.turbo.example"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FFFFFF",
+          "image": "./assets/icons/splash-icon.png",
+          "dark": {
+            "backgroundColor": "#000000"
+          },
+          "imageWidth": 200
+        }
+      ],
+      "expo-font"
+    ],
+    "newArchEnabled": true,
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "c4f8ebdb-01f9-49be-ace5-d477daff4e29"
+      }
+    }
+  }
 }
