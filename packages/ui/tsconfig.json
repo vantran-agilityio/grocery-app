@@ -3,11 +3,6 @@
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "@interfaces/*": ["src/interfaces/*"],
-      "@themes/*": ["./src/themes/*"],
-    }
+    "strict": true
   }
 }
