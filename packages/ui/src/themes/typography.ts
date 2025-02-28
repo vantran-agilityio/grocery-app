@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { FontWeight, TypoVariant } from '@interfaces/index';
+import { FontWeight, TypoVariant } from '@repo/models/types';
 import { colors } from './colors';
 
 export const variantStyle: Record<TypoVariant, any> = {

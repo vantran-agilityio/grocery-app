@@ -1,7 +1,7 @@
 'use client';
 
 import localFont from 'next/font/local';
-import { FontWeight, Typography } from '@repo/ui';
+import { FontWeight, Typography, Button } from '@repo/ui';
 
 import styles from '../styles/index.module.css';
 
@@ -36,6 +36,7 @@ export default function Web() {
       <div className={styles.container}>
         <h1 style={{ fontWeight: 500 }}>Web</h1>
         <Typography fontWeight={FontWeight.Bold}> Native</Typography>
+        <Button onPress={() => console.log(123)}>123</Button>
       </div>
     </div>
   );

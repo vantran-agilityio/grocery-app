@@ -6,7 +6,6 @@
     "version": "1.0.0",
     "scheme": "com.turbo.example",
     "orientation": "portrait",
-
     "icon": "./assets/icons/icon-light.png",
     "userInterfaceStyle": "light",
     "updates": {
@@ -20,6 +19,9 @@
         "light": "./assets/icons/icon-light.png",
         "dark": "./assets/icons/icon-dark.png",
         "tinted": "./assets/icons/icon-tinted.png"
+      },
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
       }
     },
     "android": {
@@ -51,7 +53,8 @@
           }
         }
       ],
-      "@logrocket/react-native"
+      "@logrocket/react-native",
+      "expo-secure-store"
     ],
     "newArchEnabled": true,
     "extra": {

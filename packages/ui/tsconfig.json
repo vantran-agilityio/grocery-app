@@ -4,10 +4,16 @@
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "strict": true,
+    "moduleResolution": "node16",
+    "module": "Node16",
     "baseUrl": ".",
     "paths": {
-      "@interfaces/*": ["src/interfaces/*"],
-      "@themes/*": ["./src/themes/*"],
+      "@components/*": ["src/components/*"],
+      "@components": ["src/components/index.ts"],
+      "@repo/models/types": ["src/interfaces.ts"],
+      "@themes": ["./src/themes/index.ts"],
+      "@mocks": ["./src/mocks/index.ts"],
+      "@interfaces": ["./src/interfaces/index.ts"],
     }
   }
 }

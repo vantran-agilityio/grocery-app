@@ -1,18 +1,27 @@
 {
   "name": "@repo/stores",
   "version": "0.0.0",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "types": "./src",
+  "main": "src/index.ts",
+  "module:jsx": "src",
   "scripts": {
+    "build": "tsup",
     "dev": "tsup --watch",
     "clean": "rm -rf dist",
     "lint": "eslint . --max-warnings 0"
   },
   "devDependencies": {
-    "@repo/typescript-config": "workspace:*",
     "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "tsup": "^8.0.1",
     "typescript": "5.5.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "1.18.2",
+    "@repo/constants": "workspace:*",
+    "@repo/models": "workspace:*",
+    "@repo/utils": "workspace:*",
+    "@tanstack/react-query": "5.0.5",
+    "zustand": "4.4.4"
+  }
 }

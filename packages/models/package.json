@@ -1,9 +1,12 @@
 {
   "name": "@repo/models",
   "version": "0.0.0",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/models/index.js",
+    "./types": "./dist/types/index.js"
+  },
   "scripts": {
+    "build": "tsup",
     "dev": "tsup --watch",
     "clean": "rm -rf dist",
     "lint": "eslint . --max-warnings 0"

@@ -5,7 +5,7 @@ import {
   variantStyle,
   fontWeightStyleMobile,
   fontWeightStyleWeb,
-} from '@themes/index';
+} from '@themes';
 
 const fontWeightStyle = Platform.select({
   web: fontWeightStyleWeb,

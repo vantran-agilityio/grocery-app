@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { Typography } from '@repo/ui';
+import { AddIcon, Button, Typography } from '@repo/ui';
 
 export default function Native() {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Native</Text>
       <Typography>Native</Typography>
+      <Button icon={<AddIcon />} onPress={() => console.log(123)}>
+        123
+      </Button>
       <StatusBar style="auto" />
     </View>
   );

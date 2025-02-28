@@ -1,6 +1,6 @@
 {
   "extends": "@repo/typescript-config/base.json",
-  "include": ["."],
+  "include": [".", "../ui/src/mocks"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "strict": true,

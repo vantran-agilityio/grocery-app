@@ -1,8 +1,7 @@
-import React from 'react';
 import { Text } from 'react-native';
 
 // Types
-import { FontWeight, SizeType, TypoVariant } from '@interfaces/index';
+import { FontWeight, SizeType, TypoVariant } from '@repo/models/types';
 
 // Styles
 import styles from './styles';
