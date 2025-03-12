@@ -1,5 +1,7 @@
 import localFont from 'next/font/local';
-import Providers from '@provider';
+import Providers from './provider';
+import { METADATA } from '@constants';
+import { Metadata } from 'next';
 
 const poppins = localFont({
   src: [
@@ -25,6 +27,10 @@ const poppins = localFont({
     },
   ],
 });
+
+export const metadata: Metadata = {
+  title: METADATA.LOGIN.title,
+};
 
 export default function RootLayout({
   children,

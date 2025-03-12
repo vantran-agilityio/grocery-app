@@ -24,6 +24,7 @@ import { ALERT } from '@repo/constants';
 
 // Styles
 import styles from './styles';
+import LogRocket from '@logrocket/react-native';
 
 interface IProps {
   cartItemIds: number[];
@@ -33,6 +34,7 @@ const ShoppingCart = ({ cartItemIds }: IProps) => {
   const totalCost = useStore.use.totalCost();
 
   const handleCheckout = useCallback(() => {
+    LogRocket.track('User checkout items');
     Alert.alert(ALERT.COMING_SOON);
   }, []);
 

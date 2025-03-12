@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   baseInput: {
     flex: 10,
     paddingVertical: 20,
+    outlineStyle: 'none',
   },
   iconWrapper: { flex: 1, paddingHorizontal: 28 },
   error: {

@@ -1,4 +1,4 @@
-import { Image, View } from 'react-native';
+import { Image, ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Components
@@ -12,11 +12,11 @@ import { useProductDetail } from '@repo/hooks';
 import styles from './styles';
 
 interface Props {
-  id: string;
+  id: number;
 }
 
 const ProductDetail = ({ id }: Props) => {
-  const { data } = useProductDetail(+id);
+  const { data } = useProductDetail(id);
 
   return (
     <View style={styles.background}>

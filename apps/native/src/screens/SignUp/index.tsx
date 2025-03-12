@@ -6,12 +6,15 @@ import { AuthLayout } from '@layouts';
 // Images
 import { Images } from '@assets/images';
 import { APP_ROUTES, SUCCESS } from '@repo/constants';
+import LogRocket from '@logrocket/react-native';
 
 const SignUp = () => {
   const router = useRouter();
   const toast = useToast();
 
   const handleSignUpSuccess = useCallback((message: string) => {
+    LogRocket.track('Registered');
+
     toast.show(SUCCESS.sentCodeToEmail(message));
 
     router.navigate(APP_ROUTES.AUTH_SIGNUP_VERIFY_CODE);

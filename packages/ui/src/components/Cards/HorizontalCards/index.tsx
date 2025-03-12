@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, Platform } from 'react-native';
 
 // Components
 import Item from './Item';
@@ -37,7 +37,7 @@ const HorizontalCards = ({ products, onNavigateToDetails }: IProps) => (
     )}
     keyExtractor={({ id }) => id.toString()}
     horizontal={false}
-    numColumns={2}
+    numColumns={Platform.select({ native: 2, web: 5 })}
     columnWrapperStyle={styles.row}
     contentContainerStyle={styles.container}
   />

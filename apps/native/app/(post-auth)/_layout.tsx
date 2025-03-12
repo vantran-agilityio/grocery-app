@@ -17,14 +17,7 @@ export default function PostAuthLayout() {
         }}
       />
 
-      <Stack.Screen
-        name="search"
-        options={{
-          headerShown: true,
-          header: Header,
-          headerTitleStyle: { color: colors.text.secondary },
-        }}
-      />
+      <Stack.Screen name="search" />
 
       <Stack.Screen
         name="cart-items"

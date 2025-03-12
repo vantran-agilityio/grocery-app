@@ -31,4 +31,12 @@ module.exports = {
     return config;
   },
   transpilePackages: ['react-native-web', 'react-native-svg'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
+  },
 };

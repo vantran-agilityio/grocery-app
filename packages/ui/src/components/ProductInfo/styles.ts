@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { colors } from '@themes';
 
 const styles = StyleSheet.create({
@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 40,
     width: '100%',
+    paddingHorizontal: Platform.select({ native: 0, default: 15 }),
   },
   quantity: {
     alignItems: 'center',

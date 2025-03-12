@@ -64,7 +64,11 @@ const POST = async <T>(
   config?: AxiosRequestConfig
 ) => {
   const authToken = (await getValueFor(SECURE_STORE.AUTH_TOKEN)) || '';
-  const defaultConfig = { headers: { Authorization: authToken } };
+  const defaultConfig = {
+    headers: {
+      Authorization: authToken,
+    },
+  };
 
   try {
     const res: AxiosResponse<T> = await instance.post(url, payload, {

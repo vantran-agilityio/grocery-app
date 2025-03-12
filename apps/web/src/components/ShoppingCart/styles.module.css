@@ -1,0 +1,94 @@
+.emptyCart {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.cartList {
+  margin-bottom: 20px;
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.productInfo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.productImage {
+  object-fit: contain;
+}
+
+.productDetails {
+  display: flex;
+  flex: 1;
+  gap: 50px;
+  justify-content: space-around;
+}
+
+.productName {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.price {
+  color: #333;
+  font-weight: 600;
+}
+
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantityButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.quantity {
+  width: 40px;
+  text-align: center;
+}
+
+.removeButton {
+  color: #ff4d4f;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.summary {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 10px;
+}

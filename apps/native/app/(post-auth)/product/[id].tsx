@@ -4,5 +4,5 @@ import { useLocalSearchParams } from 'expo-router';
 export default function DetailsScreen() {
   const { id } = useLocalSearchParams();
 
-  return <ProductDetail id={+id} />;
+  return <ProductDetail id={Number(id)} />;
 }

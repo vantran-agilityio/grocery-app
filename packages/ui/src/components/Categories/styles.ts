@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   },
 
   itemContainer: {
+    flex: 1,
     rowGap: 10,
     textAlign: 'center',
     alignItems: 'center',

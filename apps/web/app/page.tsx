@@ -5,12 +5,15 @@ import { LoginForm, Typography, useToast } from '@repo/ui';
 import { useCallback } from 'react';
 import { ALERT, SUCCESS } from '@repo/constants';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 const LoginScreen = () => {
   const toast = useToast();
+  const route = useRouter();
 
   const handleLoginSuccess = useCallback(() => {
     toast.show(SUCCESS.LOGIN);
+    route.push('/home');
   }, []);
 
   const handleLoginError = useCallback((message: string) => {

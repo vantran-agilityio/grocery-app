@@ -7,6 +7,7 @@ import { StatusBar } from 'expo-status-bar';
 import { Stack } from 'expo-router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import LogRocket from '@logrocket/react-native';
+import * as Updates from 'expo-updates';
 
 import { LOG_ROCKET_APP_ID } from '@repo/constants';
 import { GlobalLoader, ToastProvider } from '@repo/ui';
@@ -38,14 +39,10 @@ const RootLayout = () => {
     },
   });
 
-  const isLoading = useStore.use.isLoading();
+  const [isLoading] = useStore((state) => [state.isLoading]);
 
   useEffect(() => {
     if (loaded) {
-      LogRocket.identify(LOG_ROCKET_APP_ID, {
-        loadFont: 'success',
-      });
-
       SplashScreen.hideAsync();
     } else if (error) {
       console.error('Error loading fonts:', error.message);
@@ -53,7 +50,44 @@ const RootLayout = () => {
   }, [loaded, error]);
 
   useEffect(() => {
-    LogRocket.init(LOG_ROCKET_APP_ID);
+    LogRocket.init(LOG_ROCKET_APP_ID, {
+      // Optimize network payloads
+      network: {
+        requestSanitizer: (request) => {
+          // Don't record sensitive data like auth tokens
+          if (request.headers.authorization) {
+            request.headers.authorization = '**********';
+          }
+
+          // Filter out sensitive request body data
+          if (request.body && typeof request.body === 'string') {
+            try {
+              const parsedBody = JSON.parse(request.body);
+              if (parsedBody.password) {
+                parsedBody.password = '**********';
+              }
+              request.body = JSON.stringify(parsedBody);
+            } catch (e) {}
+          }
+          return request;
+        },
+        responseSanitizer: (response) => {
+          // Filter out sensitive response data
+          if (response.body && typeof response.body === 'string') {
+            try {
+              const parsedBody = JSON.parse(response.body);
+              if (parsedBody.token) {
+                parsedBody.token = '**********';
+              }
+              response.body = JSON.stringify(parsedBody);
+            } catch (e) {}
+          }
+          return response;
+        },
+      },
+      updateId: Updates.isEmbeddedLaunch ? null : Updates.updateId,
+      expoChannel: Updates.channel,
+    });
   }, []);
 
   if (!loaded) {

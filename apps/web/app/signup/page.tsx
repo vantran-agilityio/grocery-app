@@ -25,7 +25,7 @@ const SignUpScreen = () => {
 
       <div>
         <Typography>Already have an account? </Typography>
-        <Link href="/login">
+        <Link href="/">
           <Typography>Login</Typography>
         </Link>
       </div>

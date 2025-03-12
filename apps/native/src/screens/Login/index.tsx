@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
+import LogRocket from '@logrocket/react-native';
 import { useRouter } from 'expo-router';
+import { useStore } from '@repo/stores';
 
 // Components
 import { LoginForm, useToast } from '@repo/ui';
@@ -15,8 +17,14 @@ const Login = () => {
   const router = useRouter();
   const toast = useToast();
 
+  const userId = useStore((state) => state.userId) || '';
+
   const handleSuccess = useCallback(() => {
     toast.show(SUCCESS.LOGIN);
+
+    LogRocket.identify(userId.toString(), {
+      login: 'success',
+    });
 
     router.navigate(APP_ROUTES.POST_AUTH_STACK);
   }, []);

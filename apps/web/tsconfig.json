@@ -5,9 +5,9 @@
     "baseUrl": ".",
     "paths": {
       "@assets/*": ["./assets/*"],
-      "@provider": ["./src/provider/index.tsx"],
       "@layouts": ["./src/layouts/index.ts"],
       "@constants": ["./src/constants/index.ts"],
+      "@components": ["./src/components/index.ts"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/**/*", "app"],

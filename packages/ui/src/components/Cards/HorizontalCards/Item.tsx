@@ -51,7 +51,7 @@ const Item = ({
         <TouchableWithoutFeedback onPress={onNavigateToDetails}>
           <View style={styles.content}>
             <View style={styles.circle} />
-            <Image source={{ uri: image }} style={styles.image} />
+            <Image source={{ uri: image }} style={[styles.image]} />
             <Typography
               size={SizeType.Small}
               style={styles.price}

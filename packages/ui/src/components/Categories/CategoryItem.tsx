@@ -21,7 +21,12 @@ const CategoryItem = ({ item: { name, image }, onPressItem }: IProps) => (
   <TouchableWithoutFeedback onPress={onPressItem} testID="CategoryItem">
     <View style={styles.itemContainer}>
       <View>
-        <Image source={{ uri: image }} width={52} height={52} />
+        <Image
+          style={{ objectFit: 'contain', width: 52, height: 52 }}
+          source={{ uri: image }}
+          width={52}
+          height={52}
+        />
       </View>
       <Typography size={SizeType.Xs}>{name}</Typography>
     </View>

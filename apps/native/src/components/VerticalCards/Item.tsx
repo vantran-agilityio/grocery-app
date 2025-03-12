@@ -25,6 +25,7 @@ import { useProductDetail } from '@repo/hooks';
 
 // Styles
 import styles from './styles';
+import LogRocket from '@logrocket/react-native';
 
 interface IProps {
   cartItemId: number;
@@ -49,8 +50,10 @@ const Item = ({ cartItemId }: IProps) => {
 
   const handleDecrease = useCallback(() => {
     if (cartItem.quantity > 1) {
-      updateCartItemQuantity(cartItem.id, cartItem.quantity - 1);
+      return updateCartItemQuantity(cartItem.id, cartItem.quantity - 1);
     }
+
+    LogRocket.log(['User tried to decrease quantity below 1']);
   }, [cartItem]);
 
   const handleIncrease = useCallback(() => {
