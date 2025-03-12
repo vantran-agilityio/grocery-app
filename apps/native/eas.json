@@ -17,10 +17,8 @@
     "production": {
       "autoIncrement": true,
       "android": {
-        "image": "latest"
-      },
-      "ios": {
-        "image": "latest"
+        "image": "latest",
+        "buildType": "apk"
       }
     }
   },
