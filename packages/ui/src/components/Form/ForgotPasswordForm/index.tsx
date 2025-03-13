@@ -24,7 +24,7 @@ interface Props {
 const ForgotPasswordForm = ({ onError, onSuccess }: Props) => {
   const [email, setEmail] = useState('');
 
-  const { mutateAsync, isPending } = useAuthResetPassword();
+  const { mutateAsync } = useAuthResetPassword();
 
   // Stores
   const enableLoading = useStore.use.enableLoading();

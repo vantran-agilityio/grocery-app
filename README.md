@@ -6,8 +6,8 @@ This document outlines the estimation plan for implementing a Turborepo-based pr
 
 ## TIMELINE
 
-- Estimated duration: ~12 days (2025/02/21 - 2025/03/08)
-- Actual duration: (To be updated during the project)
+- Estimated duration: ~12 days (2025/02/21 - 2025/03/10)
+- Actual duration: 14 days
 
 ## OBJECTIVES
 
@@ -20,6 +20,7 @@ This document outlines the estimation plan for implementing a Turborepo-based pr
 
 ### Frameworks and Tools:
 
+- [React.js](https://react.dev/)(v18.3.1): React is the library for web and native user interfaces. Build user interfaces out of individual pieces called components written in JavaScript.
 - [Turborepo](https://turbo.build/repo/docs)(v2.4.2): Turborepo is a high-performance build system for JavaScript and TypeScript codebases. It is designed for scaling monorepos and also makes workflows in single-package workspaces faster, too.
 - [React Native](https://reactnative.dev/)(v0.76.7): React Native brings the best parts of developing with React to native development. It's a best-in-class JavaScript library for building user interfaces.
 - [Expo](https://expo.dev/)(v52.0.37): Expo is an open-source platform for making universal native apps for Android, iOS, and the web with JavaScript and React.
@@ -54,7 +55,7 @@ This document outlines the estimation plan for implementing a Turborepo-based pr
 
 ### Deployment:
 
-- De ploy applications using Vercel, GitHub Actions, and Expo tools.
+- Deploy applications using Vercel, GitHub Actions, and Expo tools.
 
 ## DESIGN
 
@@ -73,14 +74,19 @@ This Turborepo includes the following packages/apps:
 - `native`: a [react-native](https://reactnative.dev/) app built with [expo](https://docs.expo.dev/)
 - `web`: a [Next.js](https://nextjs.org/) app built with [react-native-web](https://necolas.github.io/react-native-web/)
 - `@repo/ui`: a stub [react-native](https://reactnative.dev/) component library shared by both `web` and `native` applications
+- `@repo/constants`: Shared constants including API endpoints, theme values, error messages, and route definitions used across all applications
+- `@repo/hooks`: Custom React hooks for data fetching, authentication, form handling, and other reusable logic shared between web and mobile apps
+- `@repo/models`: TypeScript interfaces and type definitions for data models, ensuring consistent data structures across the entire monorepo
+- `@repo/stores`: Global state management using Zustand stores for user authentication, cart management, and application preferences
+- `@repo/utils`: Helper functions for common tasks like date formatting, validation, secure storage, and platform-specific utilities
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-## DIRECTORY STRUCTURE
-
-(To be updated during the project)
+- `@repo/eslint-config`: `eslint.config.mjs`s used throughout the monorepo
 
 ## Test accounts
 
 - Account 1:
-  - Email: `temp.mail@tempmail.vn`
+  - Email: `van.tran+1@asnet.com.vn`
+  - Password: `!Asnet123`
+- Account 2:
+  - Email: `van.tran+2@asnet.com.vn`
   - Password: `!Asnet123`

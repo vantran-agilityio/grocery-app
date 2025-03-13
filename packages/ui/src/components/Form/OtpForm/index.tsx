@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { TextInput, View } from 'react-native';
 

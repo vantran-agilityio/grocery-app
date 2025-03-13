@@ -54,6 +54,7 @@ export const extractUserIdFromToken = (
  * @param token JWT token string (with or without Bearer prefix)
  * @returns The decoded payload object or null if invalid
  */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const decodeJwtToken = <T = any>(
   token: string | null | undefined
 ): T | null => {

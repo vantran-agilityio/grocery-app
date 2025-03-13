@@ -36,6 +36,7 @@ const FeaturedProducts = ({ onNavigateToDetails }: Props) => {
     if (isSuccess) {
       setProducts(data);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess]);
 
   const handleAlertMessage = useCallback(() => {

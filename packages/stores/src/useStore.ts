@@ -35,8 +35,8 @@ export const useStore = createWithEqualityFn<RootState>()(
     {
       name: 'persisted-global-store',
       storage: createJSONStorage(() => AsyncStorage),
-    },
-  ),
+    }
+  )
 );
 
 export default createSelectors(useStore);

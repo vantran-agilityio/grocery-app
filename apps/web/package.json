@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --max-warnings 0",
-    "check-types": "tsc --noEmit"
+    "check-types": "tsc --noEmit",
+    "prettier:check": "prettier --check --ignore-unknown .",
+    "test": "pnpm prettier:check && pnpm lint"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.23.1",
