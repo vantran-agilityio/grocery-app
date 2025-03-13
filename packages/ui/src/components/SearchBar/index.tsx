@@ -54,6 +54,7 @@ const SearchBar = ({
     if (!text) {
       setCurrentSearchItem('');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

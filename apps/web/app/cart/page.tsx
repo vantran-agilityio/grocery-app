@@ -8,7 +8,7 @@ export default async function CartPage() {
       <Typography size={30} style={{ textAlign: 'center' }}>
         Cart
       </Typography>
-      <ShoppingCart />;
+      <ShoppingCart />
     </PostAuthLayout>
   );
 }

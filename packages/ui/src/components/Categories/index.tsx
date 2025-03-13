@@ -32,6 +32,7 @@ const Categories = () => {
     if (isSuccess) {
       setCategories(data.categories);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess, data]);
 
   const handleAlertMessage = useCallback(() => {

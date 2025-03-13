@@ -12,9 +12,7 @@
       "fallbackToCacheTimeout": 0,
       "url": "https://u.expo.dev/c4f8ebdb-01f9-49be-ace5-d477daff4e29"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.turbo.example",

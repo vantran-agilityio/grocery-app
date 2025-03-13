@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { memo, useCallback, useEffect, useState } from 'react';
 import { View, TouchableOpacity } from 'react-native';
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import { Platform } from 'react-native';
 import { ToastOptions, ToastType, ToastService } from './types';
 

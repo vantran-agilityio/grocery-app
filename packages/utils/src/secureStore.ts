@@ -44,6 +44,7 @@ if (Platform.OS === 'web') {
   storage = webSecureStore;
 } else {
   // Use the actual SecureStore for native platforms
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   storage = require('expo-secure-store');
 }
 
