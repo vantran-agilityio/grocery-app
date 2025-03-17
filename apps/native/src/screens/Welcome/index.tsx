@@ -18,8 +18,7 @@ import { extractUserIdFromToken } from '@repo/utils';
 const Welcome = () => {
   return (
     <AuthLayout
-      description="Lorem ipsum dolorr sit amet, consetetur 
-    sadipscing elitr, sed diam nonumy"
+      description="Welcome to the app. Create an account to get started."
       title="Welcome"
       image={Images.firstTimeLogin}
     >
