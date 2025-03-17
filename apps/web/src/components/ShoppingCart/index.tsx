@@ -38,14 +38,22 @@ const ShoppingCart = () => {
   }
 
   return (
-    <div>
-      <div className={styles.cartList}>
+    <div
+      style={{
+        flex: 1,
+        flexGrow: 1,
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <div className={styles.cartList} style={{ flex: 1, overflowY: 'auto' }}>
         {sortedCartItems.map((item) => (
           <Item key={item.id} cartItem={item} userId={userId || 0} />
         ))}
       </div>
 
-      <div className={styles.summary}>
+      <div className={styles.summary} style={{ flexShrink: 0 }}>
         <div className={styles.summaryRow}>
           <Typography variant={TypoVariant.Paragraph1}>
             Shipping charges:
@@ -67,7 +75,7 @@ const ShoppingCart = () => {
           </Typography>
         </div>
 
-        <Button onPress={() => alert('Proceeding to checkout!')}>
+        <Button style={{}} onPress={() => alert('Proceeding to checkout!')}>
           Proceed to Checkout
         </Button>
       </div>

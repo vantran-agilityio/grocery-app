@@ -1,9 +1,8 @@
-name: CI
+name: Grocery APP CI
 
 on:
-  push:
-    branches: ['dev']
   pull_request:
+    branches: [main, preview, dev]
     types: [opened, synchronize]
 
 jobs:
@@ -11,25 +10,33 @@ jobs:
     name: Build and Test
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    # To use Remote Caching, uncomment the next lines and follow the steps below.
+
     env:
-      TURBO_TOKEN: Y97rKv7msOrfUhMQXA2J8llo
-      TURBO_TEAM: vantranagilityios-projects
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # clones repo into the GitHub Actions runner
         with:
-          fetch-depth: 2
+          fetch-depth: 2 # fetch only the last 2 commits
 
-      - uses: pnpm/action-setup@v3
+      - name: Cache turbo build setup
+        uses: actions/cache@v4
         with:
-          version: 8
+          path: .turbo # This specific what to cache
+          key: ${{ runner.os }}-turbo-${{ github.sha }} # Create a unique key
+          restore-keys: | # Restore the cache if key is not found
+            ${{ runner.os }}-turbo-
+
+      - uses: pnpm/action-setup@v3 # installs the pnpm packages manager in the runner environment
+        with:
+          version: 8 # pnpm version
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4 # setup Node.js environment
         with:
-          node-version: 20
+          node-version: 20 # node version
           cache: 'pnpm'
 
       - name: Install dependencies
